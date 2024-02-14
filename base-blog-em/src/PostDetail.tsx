@@ -1,9 +1,23 @@
+import { useQuery } from "@tanstack/react-query";
 import { fetchComments } from "./api";
 import "./PostDetail.css";
+import { Post } from "./Posts";
 
-export function PostDetail({ post }) {
+const PostDetail: React.FC<{ post: Post }> = ({ post }) => {
   // replace with useQuery
-  const data = [];
+  const { data, isLoading, error, isError } = useQuery({
+    queryKey: ["comments", post.id],
+    queryFn: () => fetchComments(post.id),
+  });
+
+  if (isLoading) return <h3>Loading...</h3>;
+  if (isError)
+    return (
+      <h3>
+        Oops, something went wrong.
+        <p>{error.toString()}</p>
+      </h3>
+    );
 
   return (
     <>
@@ -18,4 +32,6 @@ export function PostDetail({ post }) {
       ))}
     </>
   );
-}
+};
+
+export default PostDetail;
