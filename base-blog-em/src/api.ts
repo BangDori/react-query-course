@@ -1,3 +1,4 @@
+// query function
 export async function fetchPosts(pageNum = 1) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${pageNum}`
@@ -13,15 +14,17 @@ export async function fetchComments(postId: number) {
   return response.json();
 }
 
+// mutation function
 export async function deletePost(postId: number) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
     { method: "DELETE" }
   );
+
   return response.json();
 }
 
-export async function updatePost(postId) {
+export async function updatePost(postId: number) {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${postId}`,
     { method: "PATCH", data: { title: "REACT QUERY FOREVER!!!!" } }
