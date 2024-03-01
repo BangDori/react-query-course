@@ -6,6 +6,8 @@
 
 ## Centralized Fetching indicator with useIsFetching - Review
 
+- Issue: [#23](https://github.com/BangDori/react-query-course/issues/23)
+
 기존에 어플리케이션 규모가 작은 경우에, 즉 서버로부터 받아온 데이터의 상태를 관리가 크게 필요하지 않은 경우에는 해당 컴포넌트에서 `useQuery`를 선언하고, `isLoading`을 통해 Loading indicator를 표시하였다.
 
 하지만 어플리케이션의 규모가 커짐에 따라, 컴포넌트에서 Loading indicator를 표시해줘야 하는 상황이 많아지게 되는데 모든 컴포넌트에서 `useQuery`를 선언하고, `isLoading`을 통해 관리하는 부분에 대한 중복이 개발자를 피곤하게 만들었다.
@@ -48,6 +50,8 @@ Loading 컴포넌트에서 `useIsFetching`을 통해 React Query가 fetching 중
 이렇게 함으로써, 모든 컴포넌트에서 `isLoading` 상태를 추적하고 표시하는 것이 아닌 해당 컴포넌트를 불러와 사용할 수 있어 React의 철학인 재사용에 집중할 수 있다.
 
 ## onError Default for Query Client - Review
+
+- Issue: [#24](https://github.com/BangDori/react-query-course/issues/24)
 
 React Query에서는 모든 Loading 상태를 추적해주는, `useIsFetching` hooks를 제공해주고 있지만, error를 추적해주는 hooks는 없다. 그렇다면 어떻게 error를 중앙에서 관리할 수 있도록 할 수 있을까?
 
