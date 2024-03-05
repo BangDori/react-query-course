@@ -2,6 +2,7 @@
 
 1. [Filtering Data with the useQuery select Option - Review](#filtering-data-with-the-usequery-select-option---review)
 2. [Intro to Re-Fetch - Review](#intro-to-re-fetch---review)
+3. [Update Global Settings - Review](#update-global-settings---review)
 
 ## Filtering Data with the useQuery select Option - Review
 
@@ -148,7 +149,9 @@ Re-Fetch는 서버로부터 데이터를 다시 fetch해오는 것을 의미한�
 - `refetchOnReconnect`: 네트워크가 재연결 되었을 경우 Re-fetch
 - `refetchInterval`: 일정 시간마다 Re-fetch
 
-## Update Global Settings - Reviewㅌ
+## Update Global Settings - Review
+
+- Issue: [#33](https://github.com/BangDori/react-query-course/issues/33)
 
 query 각각에 대한 옵션은, 각 `useQuery` 혹은 `useInfiniteQuery` 등 해당 훅스에서 설정하면 된다. 전역 옵션을 설정하고 싶다면, queryClient에서 전역 설정을 다음과 같이 할 수 있다.
 
